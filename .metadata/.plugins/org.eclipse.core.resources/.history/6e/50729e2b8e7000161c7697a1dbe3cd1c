@@ -1,0 +1,19 @@
+package shreeAutomation.shreeAutomation;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+public class CreateAccount 
+{
+	public static WebDriver driver; 
+	static String appURL = "http://automationpractice.com/index.php?controller=authentication&back=my-account#account-creation";
+
+	@BeforeClass
+	public void shreeSetUp() {
+		
+		driver = new FirefoxDriver();
+	}
+	@Test
+}

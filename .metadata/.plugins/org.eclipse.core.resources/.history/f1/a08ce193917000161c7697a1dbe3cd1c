@@ -1,0 +1,27 @@
+package shreeAutomation.shreeAutomation;
+
+public class CreateAccount 
+{
+
+	private WebDriver driver;
+	private String baseUrl;
+	private StringBuffer verificationErrors = new StringBuffer();
+	@BeforeClass(alwaysRun = true)
+	public void setUp() throws Exception 
+	{
+		driver = new FirefoxDriver();
+		baseUrl = "http://automationpractice.com/";
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	}
+	public void Clear_All_Value() throws Exception 
+	{
+		//find all input fields where type = text or password and store them In array list txtfields.
+		List<WebElement> txtfields = driver.findElements(By.xpath("//input[@type='text' or @type='password']"));
+		//for loop to send text In all text box one by one.
+		for(int a=0; a<txtfields.size();a++){ 
+		txtfields.get(a).clear();
+		// txtfields.get(a).sendKeys("Text"+(a+1)); 
+		}
+	}
+
+}

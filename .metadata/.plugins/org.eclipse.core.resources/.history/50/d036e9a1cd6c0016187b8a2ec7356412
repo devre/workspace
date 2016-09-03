@@ -1,0 +1,10 @@
+package utility;
+
+public class Constant 
+{
+    public static final String URL = "http://www.shree365.com";
+    public static final String Username = "QA@QA.COM";
+    public static final String Password = "qa";
+    public static final String Path_TestData = "C://Development//workspace//shreeAutomation//src//main//java//testData";
+    public static final String File_TestData = "testData.xls";
+}

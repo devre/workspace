@@ -1,0 +1,74 @@
+package shreeAutomation.shreeAutomation;
+
+import java.io.File;
+
+//import java.io.IOException;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
+import org.apache.commons.io.FileUtils;
+//import org.apache.log4j.Logger;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
+import org.testng.AssertJUnit;
+
+public class HomePage 
+{
+	public static WebDriver driver; 
+	private String baseUrl;
+
+
+	@BeforeClass
+	public void shreeSetUp() {
+		
+		driver = new FirefoxDriver();
+		baseUrl = "http://automationpractice.com/";
+	}
+	@Test
+	public void verifyShreePageTittle() throws Exception
+	{
+		try
+		{
+		driver.navigate().to(baseUrl);
+		
+		String strPageTitle = driver.getTitle();
+		
+		if (driver.getTitle().equals(strPageTitle)) {
+            System.out.println("Page title is " + strPageTitle + ", as expected");
+        } else {
+            System.out.println("Expected page title was " + strPageTitle + ", but was " + driver.getTitle() + " instead");
+        }
+		String homeActual = "http://www.shree365.com";
+		String homeExpected = "http://www.shree365.com";
+		
+		AssertJUnit.assertEquals(homeActual, homeExpected);		
+		Assert.assertEquals(strPageTitle, "Shree365");
+		
+		File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(screenshot, new File("C://Development//workspace//shreeAutomation//screenshots//HomePage.jpg"));
+		System.out.print("Screen shot is captured and stored in c:");
+		}
+		//catch (TimeoutException toe)
+				//{
+				//WebDriverWait wait = new WebDriverWait(driver, 15);
+				//wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='register']")));
+				//driver.findElement(By.xpath("//[@id='register']")).click();
+				//Log.error("Timeout Error");
+				//throw toe;
+				//}
+		catch (Exception e)
+		{
+		//	Logger.getLogger(appURL);
+		//	throw(e);
+		}
+	}
+	@AfterClass
+	public void teardown()
+	{
+		//driver.quit();
+	}
+
+}

@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+shreeAutomation.absolutepath=true
+shreeAutomation.outdir=C\:\\Development\\workspace\\shreeAutomation\\output
+shreeAutomation.watchResultDirectory=C\:\\Development\\workspace\\shreeAutomation\\reports\\testng-results.xml
+shreeAutomation.watchResults=true

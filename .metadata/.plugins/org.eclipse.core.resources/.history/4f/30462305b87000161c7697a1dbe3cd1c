@@ -1,0 +1,50 @@
+package shreeAutomation.shreeAutomation;
+
+import org.apache.log4j.xml.DOMConfigurator;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+public class AssignmentHome 
+{
+	public static WebDriver driver; 
+	static String appURL = "http://automationpractice.com/";
+
+	@BeforeClass
+	public void assignSetUp() 
+	{
+		
+		driver = new FirefoxDriver();
+		DOMConfigurator.configure("log4j.xml");
+	}
+	@Test
+	public void verifyHomePageTittle() throws Exception
+	{
+		try
+		{
+		driver.navigate().to(appURL);
+		String strPageTitle = driver.getTitle();		
+        System.out.println("Page title is " + strPageTitle + ", as expected");            
+        String strSignIn = driver.findElement(By.partialLinkText("Sign in")).getText();
+        System.out.println("Signin Link" + strSignIn + ", as expected");        
+        driver.findElement(By.linkText("Sign in")).click();
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+     	}
+	        catch (Exception e)
+		{
+			throw(e);
+		}
+	}
+	@AfterClass
+	public void teardown()
+	{
+		driver.quit();
+	}
+	
+}

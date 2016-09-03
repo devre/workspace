@@ -1,0 +1,26 @@
+package shreeAutomation.shreeAutomation;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+public class CreateAccount 
+{
+	public static WebDriver driver; 
+	static String appURL = "http://automationpractice.com/index.php?controller=authentication&back=my-account#account-creation";
+	private String appUrl;
+	private StringBuffer verificationErrors = new StringBuffer();
+
+	@BeforeClass(alwaysRun = true)
+	public void shreeSetUp() throws Exception {
+		driver = new FirefoxDriver();
+		appUrl = "http://automationpractice.com/";
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		}
+
+	
+	@Test
+}

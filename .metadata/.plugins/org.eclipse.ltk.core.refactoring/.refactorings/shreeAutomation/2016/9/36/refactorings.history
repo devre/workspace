@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;shreeAutomation.shreeAutomation.CreateAccount&apos; to &apos;MakePurchase&apos;&#x0D;&#x0A;- Original project: &apos;shreeAutomation&apos;&#x0D;&#x0A;- Original element: &apos;shreeAutomation.shreeAutomation.CreateAccount&apos;&#x0D;&#x0A;- Renamed element: &apos;shreeAutomation.shreeAutomation.MakePurchase&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;CreateAccount&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java&lt;shreeAutomation.shreeAutomation{CreateAccount.java[CreateAccount" matchStrategy="1" name="MakePurchase" qualified="false" references="true" similarDeclarations="false" stamp="1472767861611" textual="false" version="1.0"/>
+</session>

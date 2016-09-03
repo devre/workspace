@@ -1,0 +1,10 @@
+C:\Development\workspace\ShreeUnit\ShreeUnit\bin\Debug\wires-0.6.0-win.exe
+C:\Development\workspace\ShreeUnit\ShreeUnit\bin\Debug\ShreeUnit.dll
+C:\Development\workspace\ShreeUnit\ShreeUnit\bin\Debug\ShreeUnit.pdb
+C:\Development\workspace\ShreeUnit\ShreeUnit\bin\Debug\nunit.framework.dll
+C:\Development\workspace\ShreeUnit\ShreeUnit\bin\Debug\WebDriver.dll
+C:\Development\workspace\ShreeUnit\ShreeUnit\bin\Debug\nunit.framework.xml
+C:\Development\workspace\ShreeUnit\ShreeUnit\bin\Debug\WebDriver.xml
+C:\Development\workspace\ShreeUnit\ShreeUnit\obj\Debug\ShreeUnit.csprojResolveAssemblyReference.cache
+C:\Development\workspace\ShreeUnit\ShreeUnit\obj\Debug\ShreeUnit.dll
+C:\Development\workspace\ShreeUnit\ShreeUnit\obj\Debug\ShreeUnit.pdb

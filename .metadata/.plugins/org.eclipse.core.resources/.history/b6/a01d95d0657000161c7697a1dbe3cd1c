@@ -1,0 +1,51 @@
+package shreeAutomation.shreeAutomation;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+//import java.io.File;
+
+public class AssignmentHome 
+{
+	public static WebDriver driver; 
+	static String appURL = "http://automationpractice.com/";
+
+	@BeforeClass
+	public void assignSetUp() 
+	{
+		
+		driver = new FirefoxDriver();
+	}
+	@Test
+	public void verifyHomePageTittle() throws Exception
+	{
+		try
+		{
+		driver.navigate().to(appURL);
+		
+		String strPageTitle = driver.getTitle();		
+        System.out.println("Page title is " + strPageTitle + ", as expected");
+        
+        boolean existsSignIn = driver.findElements(By.id("authenication")).size() != 0;
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        System.out.println("Signin Link" + existsSignIn + ", as expected");
+
+                
+		}
+	        catch (Exception e)
+		{
+			throw(e);
+		}
+	}
+	@AfterClass
+	public void teardown()
+	{
+		//driver.quit();
+	}
+	
+}

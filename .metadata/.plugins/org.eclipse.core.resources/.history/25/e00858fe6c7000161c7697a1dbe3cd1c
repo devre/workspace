@@ -1,0 +1,36 @@
+package shreeAutomation.shreeAutomation;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+public class Authentication 
+{
+	public static WebDriver driver; 
+	static String appURL = "http://shree365.com";
+
+	@BeforeClass
+	public void shreeSetUp() {
+		
+		driver = new FirefoxDriver();
+	}
+	@Test
+	public void verifyAuthenticateButton() throws Exception
+	{
+		try
+		{
+		driver.navigate().to(appURL);
+		}
+		catch (Exception e)
+		{
+			throw(e);
+		}
+	}
+	@AfterClass
+	public void teardown()
+	{
+		//driver.quit();
+	}
+}

@@ -1,0 +1,94 @@
+package shreeAutomation.shreeAutomation;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+public class CreateAccount 
+{
+
+	private WebDriver driver;
+	private String baseUrl;
+	private StringBuffer verificationErrors = new StringBuffer();
+	
+	@BeforeClass(alwaysRun = true)
+	public void setUp() throws Exception 
+	{
+		driver = new FirefoxDriver();
+		baseUrl = "http://automationpractice.com/";
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	}
+	public void Clear_All_Value() throws Exception 
+	{
+		//find all input fields where type = text or password and store them In array list txtfields.
+		List<WebElement> txtfields = driver.findElements(By.xpath("//input[@type='text' or @type='password']"));
+		//for loop to send text In all text box one by one.
+		for(int a=0; a<txtfields.size();a++)
+		{ 
+		txtfields.get(a).clear();
+		// txtfields.get(a).sendKeys("Text"+(a+1)); 
+		}
+	}
+	
+	@Test
+	public void testCreateAccount() throws Exception 
+	{
+		driver.get(baseUrl + "/index.php");
+		driver.findElement(By.linkText("Sign in")).click();
+		driver.findElement(By.id("email_create")).click();
+		driver.findElement(By.id("email_create")).sendKeys("test123555@gmail.com");
+		driver.findElement(By.id("SubmitCreate")).click();
+		driver.findElement(By.id("id_gender1")).click();
+		driver.findElement(By.id("customer_firstname")).sendKeys("Fnmae");
+		driver.findElement(By.id("customer_lastname")).sendKeys("lname");
+		driver.findElement(By.id("passwd")).sendKeys("test1");
+		driver.findElement(By.id("days")).click();
+		driver.findElement(By.cssSelector("option[value=\"2\"]")).click();
+		driver.findElement(By.id("months")).click();
+		driver.findElement(By.cssSelector("#months > option[value=\"3\"]")).click();
+		driver.findElement(By.id("years")).click();
+		driver.findElement(By.cssSelector("option[value=\"1992\"]")).click();
+		driver.findElement(By.id("company")).sendKeys("compnay name");
+		driver.findElement(By.id("address1")).sendKeys("20205 SE Drive");
+		driver.findElement(By.id("address2")).sendKeys("APT A");
+		driver.findElement(By.id("city")).sendKeys("Cityname");
+		driver.findElement(By.id("id_state")).click();
+		driver.findElement(By.cssSelector("option[value=\"47\"]")).click();
+		driver.findElement(By.id("postcode")).sendKeys("");
+		driver.findElement(By.id("other")).sendKeys("none");
+		driver.findElement(By.id("phone")).sendKeys("111111111111");
+		driver.findElement(By.id("phone_mobile")).sendKeys("111111111111");
+		driver.findElement(By.id("alias")).sendKeys("test");
+		String zip = driver.findElement(By.id("postcode")).getText();
+		///System.out.println("ZIp"+zip);
+		int i = zip.length();
+		System.out.println("Lenght"+i);
+		if (i==0 ) {
+		System.out.println("ZIP Code is null"); // Get Text
+		} else {
+		driver.findElement(By.id("submitAccount")).click();
+		}
+		}
+		@AfterClass(alwaysRun = true)
+		public void tearDown() throws Exception {
+		driver.quit();
+		String verificationErrorString = verificationErrors.toString();
+		if (!"".equals(verificationErrorString)) {
+		fail(verificationErrorString);
+		}
+		}
+		private void fail(String verificationErrorString) {
+			// TODO Auto-generated method stub
+			
+		}
+
+	
+
+}
